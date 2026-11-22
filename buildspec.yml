@@ -9,10 +9,10 @@ phases:
   build:
     commands:
       - echo Building Docker image
-      - docker build -t ecs-demo-app:v1 .
-      - docker tag ecs-demo-app:v1 857909159927.dkr.ecr.ap-south-1.amazonaws.com/ecs-demo-app:v1
+      - docker build -t ecs-demo-app:v2 .
+      - docker tag ecs-demo-app:v2 857909159927.dkr.ecr.ap-south-1.amazonaws.com/ecs-demo-app:v2
 
   post_build:
     commands:
       - echo Pushing Docker image to ECR
-      - docker push 857909159927.dkr.ecr.ap-south-1.amazonaws.com/ecs-demo-app:v1
+      - docker push 857909159927.dkr.ecr.ap-south-1.amazonaws.com/ecs-demo-app:v2
