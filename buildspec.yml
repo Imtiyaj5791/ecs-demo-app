@@ -1,19 +1,18 @@
-
 version: 0.2
 
 phases:
   pre_build:
     commands:
       - echo Logging in to Amazon ECR
-      - aws ecr get-login-password --region ap-south-1 | docker login --username AWS --password-stdin 563384363407.dkr.ecr.ap-south-1.amazonaws.com
+      - aws ecr get-login-password --region ap-south-1 | docker login --username AWS --password-stdin 857909159927.dkr.ecr.ap-south-1.amazonaws.com
 
   build:
     commands:
       - echo Building Docker image
-      - docker build -t ecs-demo-app:v2 .
-      - docker tag ecs-demo-app:v2 563384363407.dkr.ecr.ap-south-1.amazonaws.com/ecs-demo-app:v2
+      - docker build -t ecs-demo-app:v1 .
+      - docker tag ecs-demo-app:v1 857909159927.dkr.ecr.ap-south-1.amazonaws.com/ecs-demo-app:v1
 
   post_build:
     commands:
       - echo Pushing Docker image to ECR
-      - docker push 563384363407.dkr.ecr.ap-south-1.amazonaws.com/ecs-demo-app:v2
+      - docker push 857909159927.dkr.ecr.ap-south-1.amazonaws.com/ecs-demo-app:v1
