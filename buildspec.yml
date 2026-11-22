@@ -11,7 +11,7 @@ phases:
     commands:
       - echo Building Docker image
       - docker build -t ecs-demo-app:v3 .
-      - docker tag ecs-demo-app:v2 563384363407.dkr.ecr.ap-south-1.amazonaws.com/ecs-demo-app:v3
+      - docker tag ecs-demo-app:v3 563384363407.dkr.ecr.ap-south-1.amazonaws.com/ecs-demo-app:v3
 
   post_build:
     commands:
